@@ -36,7 +36,6 @@ const gameOver =(winningSequence) =>{
   winningSequence.forEach(cell => cell.classList.add('winner'));
   ;}
 
-
 // check winner function, set winner into false as no winner, loop through each element 's' in winningSequences, set another const _cells equal to cells to be reused.
 //each winning sequence is in a sub array, take sub array's first index, second index and third index.
 // if they are all match to pass in the sequence, turn winner to true and end the game.
@@ -56,7 +55,7 @@ const gameWinner =() => {
 const aiTurn = () => {
   disableCellListeners();
   setTimeout(() => {
-    takeTurn(aiChoice(), 'x');
+    takeTurn(aiChoice(), 'X');
     if(!gameWinner())
     cellListeners();
   }, 1500);
