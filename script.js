@@ -67,7 +67,8 @@ const gameOver = (winningSequence) =>{
     return;
   }
 
-  winningSequence.forEach(cell => cell.classList.add('winner'));
+  // winningSequence.forEach(cell => cell.classList.add('winner'));
+  winningSequence.forEach(cell => cell.style.color = 'blue');
   if(myTurn){
     endGameMessage.innerText = "You win!";
   }else if(!myTurn){
@@ -123,3 +124,17 @@ cellListeners();
 
 // disable the event listener
 const disableCellListeners = () => cells().forEach(ce => ce.removeEventListener('click', eventClick));
+
+
+// Reset game function
+const resetGame = document.getElementById("resetGame");
+
+resetGame.addEventListener('click', newGame);
+
+function newGame() {
+  cells().forEach(_cell => _cell.innerText = '');
+  cells().forEach(_cell => _cell.style.color = 'black');
+  endGameMessage.innerText = '';
+  disableCellListeners();
+  cellListeners();
+}
