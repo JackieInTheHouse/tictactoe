@@ -25,6 +25,8 @@
 
 .reset {
   cursor: pointer;
+  height: 30px;
+  width: 80px;
 }
 
 .reset:hover {
